@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Loan Approval App</title>
+      <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='checkIcon.ico') }}"/>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <div class="container">
+      <a href="{{ url_for('dashboard') }}"><button class="dashboard">Dashboard</button></a>
+         <header style="padding-top: 15px">Loan Approval</header>
+         <p>Please fill out the requested information</p>
+         <div class="progress-bar">
+            <div class="step">
+               <p>
+                  Basic Info
+               </p>
+               <div class="bullet">
+                  <span>1</span>
+               </div>
+               <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+               <p>
+                  Basic Info+
+               </p>
+               <div class="bullet">
+                  <span>2</span>
+               </div>
+               <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+               <p>
+                  Financial Info
+               </p>
+               <div class="bullet">
+                  <span>3</span>
+               </div>
+               <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+               <p>
+                  Loan Amount
+               </p>
+               <div class="bullet">
+                  <span>4</span>
+               </div>
+               <div class="check fas fa-check"></div>
+            </div>
+         </div>
+         <div class="form-outer">
+            <form action="{{ url_for('form_input') }}" method="post">
+               <div class="page slide-page">
+                  <div class="title">
+                     Basic Info:
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Gender
+                     </div>
+                     <select name="gender">
+                        <option></option>
+                        <option>Male</option>
+                        <option>Female</option>
+                     </select>
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Married
+                     </div>
+                     <select name="married">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                     </select>
+                  </div>
+
+                  <div class="field">
+                     <div class="label">
+                        Number of Dependents
+                     </div>
+                     <select name="dependents">
+                        <option></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3+</option>
+                     </select>
+                  </div>
+                  <div class="field">
+                     <button class="firstNext next">Next</button>
+                  </div>
+               </div>
+               <div class="page">
+                  <div class="title">
+                     Basic Info+:
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Graduate
+                     </div>
+                     <select name="edu">
+                        <option></option>
+                        <option>Graduate</option>
+                        <option>Not Graduate</option>
+                     </select>
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Self Employed
+                     </div>
+                     <select name="occupation">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                     </select>
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Property Area
+                     </div>
+                     <select name="property_area">
+                        <option></option>
+                        <option>Semi-Urban</option>
+                        <option>Urban</option>
+                        <option>Rural</option>
+                     </select>
+                  </div>
+                  <div class="field btns">
+                     <button class="prev-1 prev">Previous</button>
+                     <button class="next-1 next">Next</button>
+                  </div>
+               </div>
+               <div class="page">
+                  <div class="title">
+                     Financial Info:
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Applicant Monthly Income
+                     </div>
+                     <input type="number" name="applicant_income">
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Spousal Monthly Income
+                     </div>
+                     <input placeholder="Enter 0 if Not Applicable" type="number" name="spouse_income">
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Credit Score Above 530?
+                     </div>
+                     <select name="credit_history">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                     </select>
+                  </div>
+                  <div class="field btns">
+                     <button class="prev-2 prev">Previous</button>
+                     <button class="next-2 next">Next</button>
+                  </div>
+               </div>
+               <div class="page">
+                  <div class="title">
+                     Loan Info:
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Loan Amount (In Thousands)
+                     </div>
+                     <input type="number" name="loan_amount">
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Loan Term (In Years)
+                     </div>
+                     <select name="loan_term">
+                        <option></option>
+                        <option>1</option>
+                        <option>3</option>
+                        <option>5</option>
+                        <option>7</option>
+                        <option>10</option>
+                        <option>15</option>
+                        <option>20</option>
+                        <option>25</option>
+                        <option>30</option>
+                        <option>40</option>
+                     </select>
+                  </div>
+                  <div class="field">
+                  </div>
+                  <div class="field btns">
+                     <button class="prev-3 prev">Previous</button>
+                     <button class="submit">Submit</button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+      <script type=text/javascript src="{{ url_for('static', filename='script.js') }}"></script>
+   </body>
+</html>

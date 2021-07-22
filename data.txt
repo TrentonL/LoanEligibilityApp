@@ -1,0 +1,2 @@
+New Input:; Gender:Male; Married:Yes; Dependents:2; Graduate:Graduate; Applicant Income:3520K; Loan Amount:300K; Loan Term:300; Credit History Above Guideline:Yes; Property Area:Urban; Occupation:Yes; Outcome: APPROVED; 
+New Input:; Gender:Male; Married:Yes; Dependents:1; Graduate:Not Graduate; Applicant Income:10K; Loan Amount:350K; Loan Term:240; Credit History Above Guideline:No; Property Area:Urban; Occupation:No; Outcome: NOT APPROVED; 

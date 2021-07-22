@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Loan Approval App</title>
+      <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='checkIcon.ico') }}"/>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body style="padding-top: 15px; padding-bottom: 15px;">
+      <div class="container" style="width: auto;">
+         <h3>Dashboard</h3>
+        <br>
+         <a href="{{ url_for('form_input') }}"><button class="goback">Back</button></a>
+          <br><br>
+                <form action="{{ url_for('dashboard') }}" method="post">
+                    <div class="field">
+                     <div class="label">
+                        Visualization Query:
+                     <select name="visual">
+                        <option></option>
+                        <option>Heat Map - Data Relations</option>
+                        <option>Bar Graph - Loan Amount by Monthly Income (In Thousands)</option>
+                        <option>Scatter Plot - Income and Loan Amount</option>
+                    </select>
+                     <button type="submit">Submit</button>
+                        <br>
+                         {% if visual == "Heat Map - Data Relations" %}
+                         <img src="{{ url_for('static', filename='heatmap.png') }}">
+                         {% elif visual == "Bar Graph - Loan Amount by Monthly Income (In Thousands)" %}
+                         <img src="{{ url_for('static', filename='loanappamount.png') }}">
+                         {% elif visual == "Scatter Plot - Income and Loan Amount" %}
+                         <img src="{{ url_for('static', filename='scatterplot.png') }}">
+                         {% else %}
+                         <br>
+                         <p>Please select a query and click submit</p>
+                         {% endif %}
+                    </div>
+                    </div>
+                <form>
+      </div>
+      <script type=text/javascript src="{{ url_for('static', filename='script.js') }}"></script>
+   </body>
+</html>
